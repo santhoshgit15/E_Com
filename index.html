@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ASOS-style fashion e-commerce - Discover the latest trends in women's clothing, dresses, tops and more. Shop new arrivals now.">
+    <title>LUXE — Premium Fashion E-Commerce</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Announcement Bar -->
+    <div class="announcement-bar" id="announcement-bar">
+        <div class="announcement-content">
+            <span>🔥 FLASH SALE — Up to 50% off everything + Free shipping over $50</span>
+            <button class="announcement-close" id="announcement-close" aria-label="Close announcement">&times;</button>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-left">
+                <a href="#" class="logo" id="logo">LUXE</a>
+                <div class="nav-links" id="nav-links">
+                    <a href="#" class="nav-link active" data-category="new">New In</a>
+                    <a href="#" class="nav-link" data-category="clothing">Clothing</a>
+                    <a href="#" class="nav-link" data-category="dresses">Dresses</a>
+                    <a href="#" class="nav-link" data-category="shoes">Shoes</a>
+                    <a href="#" class="nav-link" data-category="accessories">Accessories</a>
+                    <a href="#" class="nav-link" data-category="sale">Sale</a>
+                </div>
+            </div>
+            <div class="nav-right">
+                <button class="nav-icon search-toggle" id="search-toggle" aria-label="Search">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                </button>
+                <button class="nav-icon" id="wishlist-btn" aria-label="Wishlist">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                    </svg>
+                    <span class="badge wishlist-count" id="wishlist-count">0</span>
+                </button>
+                <button class="nav-icon" id="account-btn" aria-label="Account">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                </button>
+                <button class="nav-icon cart-icon" id="cart-toggle" aria-label="Shopping bag">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <path d="M16 10a4 4 0 0 1-8 0"></path>
+                    </svg>
+                    <span class="badge cart-count" id="cart-count">0</span>
+                </button>
+                <button class="hamburger" id="hamburger" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+        <!-- Search Overlay -->
+        <div class="search-overlay" id="search-overlay">
+            <div class="search-container">
+                <input type="text" class="search-input" id="search-input" placeholder="Search for products, brands..." autocomplete="off">
+                <button class="search-close" id="search-close" aria-label="Close search">&times;</button>
+            </div>
+            <div class="search-suggestions" id="search-suggestions">
+                <div class="search-trending">
+                    <h4>Trending Now</h4>
+                    <div class="trending-tags">
+                        <span class="tag">Bardot tops</span>
+                        <span class="tag">Summer dresses</span>
+                        <span class="tag">Prairie style</span>
+                        <span class="tag">Linen</span>
+                        <span class="tag">Embroidery</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Nav -->
+    <div class="mobile-nav" id="mobile-nav">
+        <div class="mobile-nav-inner">
+            <a href="#" class="mobile-nav-link">New In</a>
+            <a href="#" class="mobile-nav-link">Clothing</a>
+            <a href="#" class="mobile-nav-link">Dresses</a>
+            <a href="#" class="mobile-nav-link">Shoes</a>
+            <a href="#" class="mobile-nav-link">Accessories</a>
+            <a href="#" class="mobile-nav-link sale-link">Sale — Up to 50% Off</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-bg">
+            <img src="images/hero-model.png" alt="Bardot top in embroidery - Yellow off-shoulder crop top" class="hero-image" id="hero-image" loading="eager">
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <span class="hero-label">New Collection</span>
+                <h1 class="hero-title">Bardot top<br><em>in embroidery</em></h1>
+                <p class="hero-subtitle">Discover the latest prairie-inspired fashion with delicate embroidery details</p>
+                <div class="hero-price">
+                    <span class="price-current">$39.99</span>
+                    <span class="price-original">$54.99</span>
+                    <span class="price-badge">-27%</span>
+                </div>
+                <div class="hero-actions">
+                    <button class="btn btn-primary hero-cta" id="hero-add-cart" data-product="hero">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <path d="M16 10a4 4 0 0 1-8 0"></path>
+                        </svg>
+                        Add to cart
+                    </button>
+                    <button class="btn btn-outline hero-wishlist" id="hero-wishlist">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Hero Scroll Indicator -->
+        <div class="scroll-indicator" id="scroll-indicator">
+            <span>Scroll to explore</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- Category Strip -->
+    <section class="category-strip" id="category-strip">
+        <div class="container">
+            <div class="category-scroll">
+                <a href="#" class="category-chip active">All</a>
+                <a href="#" class="category-chip">Tops</a>
+                <a href="#" class="category-chip">Dresses</a>
+                <a href="#" class="category-chip">Bottoms</a>
+                <a href="#" class="category-chip">Outerwear</a>
+                <a href="#" class="category-chip">Accessories</a>
+                <a href="#" class="category-chip">Shoes</a>
+                <a href="#" class="category-chip">Bags</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Collection Section (Modern Prairie) -->
+    <section class="collection-section" id="collection">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-header-left">
+                    <span class="section-eyebrow">Curated Edit</span>
+                    <h2 class="section-title"><em>Modern prairie</em></h2>
+                    <p class="section-desc">Soft silhouettes, delicate details, and earthy palettes—our latest edit channels effortless countryside charm.</p>
+                </div>
+                <div class="section-header-right">
+                    <a href="#" class="view-all-link">
+                        View all
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14"></path>
+                            <path d="m12 5 7 7-7 7"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="product-grid" id="product-grid">
+                <!-- Product 1 -->
+                <div class="product-card" data-product-id="1" data-aos="fade-up">
+                    <div class="product-image-wrapper">
+                        <img src="images/product-1.png" alt="Polka dot wrap dress" class="product-image" loading="lazy">
+                        <div class="product-badges">
+                            <span class="product-badge badge-new">New</span>
+                        </div>
+                        <div class="product-quick-actions">
+                            <button class="quick-action wishlist-action" aria-label="Add to wishlist" data-product-id="1">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                                </svg>
+                            </button>
+                            <button class="quick-action quick-view-action" aria-label="Quick view" data-product-id="1">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                            </button>
+                        </div>
+                        <button class="add-to-bag-overlay" data-product-id="1">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                                <line x1="3" y1="6" x2="21" y2="6"></line>
+                                <path d="M16 10a4 4 0 0 1-8 0"></path>
+                            </svg>
+                            Add to bag
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <p class="product-brand">LUXE Design</p>
+                        <h3 class="product-name">Polka Dot Wrap Dress</h3>
+                        <div class="product-price">
+                            <span class="current-price">$45</span>
+                        </div>
+                        <div class="product-colors">
+                            <span class="color-swatch" style="background: #1a1a1a;" title="Black"></span>
+                            <span class="color-swatch" style="background: #8B4513;" title="Brown"></span>
+                            <span class="color-swatch" style="background: #C32148;" title="Red"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 (Featured - Large) -->
+                <div class="product-card featured" data-product-id="2" data-aos="fade-up" data-aos-delay="100">
+                    <div class="product-image-wrapper">
+                        <img src="images/hero-model.png" alt="Bardot top in embroidery" class="product-image" loading="lazy">
+                        <div class="product-badges">
+                            <span class="product-badge badge-trending">Trending</span>
+                        </div>
+                        <div class="product-quick-actions">
+                            <button class="quick-action wishlist-action" aria-label="Add to wishlist" data-product-id="2">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                                </svg>
+                            </button>
+                            <button class="quick-action quick-view-action" aria-label="Quick view" data-product-id="2">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                            </button>
+                        </div>
+                        <button class="add-to-bag-overlay" data-product-id="2">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                                <line x1="3" y1="6" x2="21" y2="6"></line>
+                                <path d="M16 10a4 4 0 0 1-8 0"></path>
+                            </svg>
+                            Add to bag
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <p class="product-brand">LUXE Essentials</p>
+                        <h3 class="product-name">Bardot Top in Embroidery</h3>
+                        <div class="product-price">
+                            <span class="current-price">$39.99</span>
+                            <span class="original-price">$54.99</span>
+                        </div>
+                        <div class="product-colors">
+                            <span class="color-swatch active" style="background: #DAA520;" title="Mustard"></span>
+                            <span class="color-swatch" style="background: #F5F5DC;" title="Cream"></span>
+                            <span class="color-swatch" style="background: #BC8F8F;" title="Rose"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card" data-product-id="3" data-aos="fade-up" data-aos-delay="200">
+                    <div class="product-image-wrapper">
+                        <img src="images/product-2.png" alt="Lavender off-shoulder blouse" class="product-image" loading="lazy">
+                        <div class="product-badges">
+                            <span class="product-badge badge-limited">Limited</span>
+                        </div>
+                        <div class="product-quick-actions">
+                            <button class="quick-action wishlist-action" aria-label="Add to wishlist" data-product-id="3">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                                </svg>
+                            </button>
+                            <button class="quick-action quick-view-action" aria-label="Quick view" data-product-id="3">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                            </button>
+                        </div>
+                        <button class="add-to-bag-overlay" data-product-id="3">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                                <line x1="3" y1="6" x2="21" y2="6"></line>
+                                <path d="M16 10a4 4 0 0 1-8 0"></path>
+                            </svg>
+                            Add to bag
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <p class="product-brand">LUXE Atelier</p>
+                        <h3 class="product-name">Ruffle Off-Shoulder Blouse</h3>
+                        <div class="product-price">
+                            <span class="current-price">$55</span>
+                        </div>
+                        <div class="product-colors">
+                            <span class="color-swatch active" style="background: #E6E6FA;" title="Lavender"></span>
+                            <span class="color-swatch" style="background: #FFFFFF; border: 1px solid #ddd;" title="White"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="product-card" data-product-id="4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="product-image-wrapper">
+                        <img src="images/product-3.png" alt="Floral print mini dress" class="product-image" loading="lazy">
+                        <div class="product-badges">
+                            <span class="product-badge badge-sale">-30%</span>
+                        </div>
+                        <div class="product-quick-actions">
+                            <button class="quick-action wishlist-action" aria-label="Add to wishlist" data-product-id="4">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                                </svg>
+                            </button>
+                            <button class="quick-action quick-view-action" aria-label="Quick view" data-product-id="4">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                            </button>
+                        </div>
+                        <button class="add-to-bag-overlay" data-product-id="4">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                                <line x1="3" y1="6" x2="21" y2="6"></line>
+                                <path d="M16 10a4 4 0 0 1-8 0"></path>
+                            </svg>
+                            Add to bag
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <p class="product-brand">LUXE Design</p>
+                        <h3 class="product-name">Floral Puff Sleeve Mini Dress</h3>
+                        <div class="product-price">
+                            <span class="current-price">$35</span>
+                            <span class="original-price">$50</span>
+                        </div>
+                        <div class="product-colors">
+                            <span class="color-swatch active" style="background: linear-gradient(135deg, #FFB6C1, #FFDAB9);" title="Floral"></span>
+                            <span class="color-swatch" style="background: #87CEEB;" title="Blue"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="product-card" data-product-id="5" data-aos="fade-up" data-aos-delay="400">
+                    <div class="product-image-wrapper">
+                        <img src="images/product-4.png" alt="Cream knit crop top" class="product-image" loading="lazy">
+                        <div class="product-quick-actions">
+                            <button class="quick-action wishlist-action" aria-label="Add to wishlist" data-product-id="5">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                                </svg>
+                            </button>
+                            <button class="quick-action quick-view-action" aria-label="Quick view" data-product-id="5">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                            </button>
+                        </div>
+                        <button class="add-to-bag-overlay" data-product-id="5">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                                <line x1="3" y1="6" x2="21" y2="6"></line>
+                                <path d="M16 10a4 4 0 0 1-8 0"></path>
+                            </svg>
+                            Add to bag
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <p class="product-brand">LUXE Essentials</p>
+                        <h3 class="product-name">Lace Detail Knit Crop Top</h3>
+                        <div class="product-price">
+                            <span class="current-price">$32</span>
+                        </div>
+                        <div class="product-colors">
+                            <span class="color-swatch active" style="background: #FFFDD0;" title="Cream"></span>
+                            <span class="color-swatch" style="background: #1a1a1a;" title="Black"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 6 -->
+                <div class="product-card" data-product-id="6" data-aos="fade-up" data-aos-delay="500">
+                    <div class="product-image-wrapper">
+                        <img src="images/product-5.png" alt="Sage green satin slip dress" class="product-image" loading="lazy">
+                        <div class="product-badges">
+                            <span class="product-badge badge-new">New</span>
+                        </div>
+                        <div class="product-quick-actions">
+                            <button class="quick-action wishlist-action" aria-label="Add to wishlist" data-product-id="6">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                                </svg>
+                            </button>
+                            <button class="quick-action quick-view-action" aria-label="Quick view" data-product-id="6">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                            </button>
+                        </div>
+                        <button class="add-to-bag-overlay" data-product-id="6">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                                <line x1="3" y1="6" x2="21" y2="6"></line>
+                                <path d="M16 10a4 4 0 0 1-8 0"></path>
+                            </svg>
+                            Add to bag
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <p class="product-brand">LUXE Atelier</p>
+                        <h3 class="product-name">Sage Satin Slip Dress</h3>
+                        <div class="product-price">
+                            <span class="current-price">$62</span>
+                        </div>
+                        <div class="product-colors">
+                            <span class="color-swatch active" style="background: #8FBC8F;" title="Sage"></span>
+                            <span class="color-swatch" style="background: #F5F5DC;" title="Champagne"></span>
+                            <span class="color-swatch" style="background: #1a1a1a;" title="Black"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Promo Banner -->
+    <section class="promo-banner" id="promo-banner">
+        <div class="container">
+            <div class="promo-grid">
+                <div class="promo-card promo-card-large">
+                    <img src="images/product-6.png" alt="Summer essentials collection" class="promo-image" loading="lazy">
+                    <div class="promo-overlay"></div>
+                    <div class="promo-content">
+                        <span class="promo-label">Collection</span>
+                        <h3 class="promo-title">Summer Essentials</h3>
+                        <p class="promo-desc">Light fabrics & breezy silhouettes</p>
+                        <a href="#" class="btn btn-promo">Shop now</a>
+                    </div>
+                </div>
+                <div class="promo-card">
+                    <div class="promo-solid" style="background: linear-gradient(135deg, #2d2d2d, #1a1a1a);">
+                        <div class="promo-content">
+                            <span class="promo-label light">Free shipping</span>
+                            <h3 class="promo-title light">On orders over $50</h3>
+                            <p class="promo-desc light">Plus hassle-free returns within 30 days</p>
+                            <a href="#" class="btn btn-promo-light">Learn more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="promo-card">
+                    <div class="promo-solid" style="background: linear-gradient(135deg, #DAA520, #B8860B);">
+                        <div class="promo-content">
+                            <span class="promo-label">Members exclusive</span>
+                            <h3 class="promo-title">Extra 15% off</h3>
+                            <p class="promo-desc">Join now and get rewarded</p>
+                            <a href="#" class="btn btn-promo">Sign up</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof / Reviews -->
+    <section class="social-proof" id="social-proof">
+        <div class="container">
+            <div class="section-header center">
+                <span class="section-eyebrow">What People Say</span>
+                <h2 class="section-title"><em>Customer</em> Reviews</h2>
+            </div>
+            <div class="reviews-carousel" id="reviews-carousel">
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Absolutely love the quality! The Bardot top fits perfectly and the embroidery details are stunning. Will definitely order again."</p>
+                    <div class="review-author">
+                        <div class="author-avatar">SK</div>
+                        <div>
+                            <p class="author-name">Sarah K.</p>
+                            <p class="author-meta">Verified Buyer</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Fast delivery and beautiful packaging. The prairie dress is even more gorgeous in person. The fabric quality exceeded my expectations."</p>
+                    <div class="review-author">
+                        <div class="author-avatar">MR</div>
+                        <div>
+                            <p class="author-name">Maria R.</p>
+                            <p class="author-meta">Verified Buyer</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">★★★★☆</div>
+                    <p class="review-text">"The slip dress is so elegant—perfect for date night. True to size and the color is exactly as shown. The satin feels so luxurious!"</p>
+                    <div class="review-author">
+                        <div class="author-avatar">JL</div>
+                        <div>
+                            <p class="author-name">Jessica L.</p>
+                            <p class="author-meta">Verified Buyer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter" id="newsletter">
+        <div class="container">
+            <div class="newsletter-inner">
+                <div class="newsletter-text">
+                    <span class="section-eyebrow">Stay Updated</span>
+                    <h2 class="section-title"><em>Join</em> the club</h2>
+                    <p>Get 10% off your first order plus early access to new arrivals, sales, and exclusive offers.</p>
+                </div>
+                <form class="newsletter-form" id="newsletter-form">
+                    <div class="input-group">
+                        <input type="email" class="newsletter-input" id="newsletter-email" placeholder="Enter your email" required>
+                        <button type="submit" class="btn btn-primary newsletter-btn" id="newsletter-submit">Subscribe</button>
+                    </div>
+                    <p class="newsletter-disclaimer">By subscribing, you agree to our Privacy Policy and consent to receive marketing emails.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="#" class="footer-logo">LUXE</a>
+                    <p class="footer-about">Premium fashion for the modern woman. Curated collections that blend timeless elegance with contemporary style.</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Pinterest">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2C6.48 2 2 6.48 2 12c0 4.25 2.67 7.88 6.42 9.31-.09-.78-.17-1.98.04-2.83.19-.78 1.2-5.07 1.2-5.07s-.31-.61-.31-1.51c0-1.42.82-2.47 1.84-2.47.87 0 1.29.65 1.29 1.43 0 .87-.56 2.18-.84 3.39-.24 1.01.5 1.83 1.49 1.83 1.79 0 3.17-1.89 3.17-4.61 0-2.41-1.73-4.1-4.21-4.1-2.87 0-4.55 2.15-4.55 4.37 0 .87.33 1.79.75 2.3.08.1.09.19.07.29-.08.31-.25 1.01-.28 1.15-.05.19-.15.23-.35.14-1.31-.61-2.13-2.51-2.13-4.04 0-3.29 2.39-6.31 6.89-6.31 3.62 0 6.43 2.58 6.43 6.02 0 3.59-2.27 6.49-5.41 6.49-1.06 0-2.05-.55-2.39-1.2l-.65 2.48c-.24.91-.88 2.06-1.31 2.75.99.31 2.03.47 3.12.47 5.52 0 10-4.48 10-10S17.52 2 12 2z"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Shop</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">New Arrivals</a></li>
+                        <li><a href="#">Best Sellers</a></li>
+                        <li><a href="#">Clothing</a></li>
+                        <li><a href="#">Dresses</a></li>
+                        <li><a href="#">Accessories</a></li>
+                        <li><a href="#">Sale</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Help</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Customer Service</a></li>
+                        <li><a href="#">Track Order</a></li>
+                        <li><a href="#">Returns & Exchanges</a></li>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Size Guide</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Sustainability</a></li>
+                        <li><a href="#">Press</a></li>
+                        <li><a href="#">Affiliate Program</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 LUXE. All rights reserved.</p>
+                <div class="footer-payment">
+                    <span class="payment-icon">VISA</span>
+                    <span class="payment-icon">MC</span>
+                    <span class="payment-icon">AMEX</span>
+                    <span class="payment-icon">PP</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3>Your Bag <span class="cart-header-count" id="cart-header-count">(0)</span></h3>
+            <button class="cart-close" id="cart-close" aria-label="Close cart">&times;</button>
+        </div>
+        <div class="cart-body" id="cart-body">
+            <div class="cart-empty" id="cart-empty">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.3">
+                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <path d="M16 10a4 4 0 0 1-8 0"></path>
+                </svg>
+                <p>Your bag is empty</p>
+                <span>Add items to get started</span>
+            </div>
+            <div class="cart-items" id="cart-items"></div>
+        </div>
+        <div class="cart-footer" id="cart-footer" style="display: none;">
+            <div class="cart-subtotal">
+                <span>Subtotal</span>
+                <span class="cart-total-price" id="cart-total-price">$0.00</span>
+            </div>
+            <p class="cart-shipping-note">Shipping calculated at checkout</p>
+            <button class="btn btn-primary cart-checkout" id="cart-checkout">Checkout</button>
+            <a href="#" class="cart-continue">Continue Shopping</a>
+        </div>
+    </div>
+
+    <!-- Quick View Modal -->
+    <div class="modal-overlay" id="quick-view-overlay"></div>
+    <div class="quick-view-modal" id="quick-view-modal">
+        <button class="modal-close" id="modal-close">&times;</button>
+        <div class="modal-body">
+            <div class="modal-image">
+                <img src="" alt="" id="modal-product-image">
+            </div>
+            <div class="modal-info">
+                <p class="modal-brand" id="modal-brand"></p>
+                <h2 class="modal-name" id="modal-name"></h2>
+                <div class="modal-price" id="modal-price"></div>
+                <div class="modal-description" id="modal-description">
+                    <p>Beautifully crafted with premium materials for a luxurious feel. This piece features delicate details and a flattering silhouette perfect for any occasion.</p>
+                </div>
+                <div class="modal-sizes">
+                    <p class="size-label">Size</p>
+                    <div class="size-options">
+                        <button class="size-btn">XS</button>
+                        <button class="size-btn active">S</button>
+                        <button class="size-btn">M</button>
+                        <button class="size-btn">L</button>
+                        <button class="size-btn">XL</button>
+                    </div>
+                </div>
+                <button class="btn btn-primary modal-add-cart" id="modal-add-cart">Add to bag</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <div class="toast-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20 6L9 17l-5-5"></path>
+            </svg>
+        </div>
+        <div class="toast-content">
+            <p class="toast-title" id="toast-title">Added to bag</p>
+            <p class="toast-message" id="toast-message">Item has been added to your bag</p>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
